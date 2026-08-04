@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Безопасность — SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="login.html"
+                class="login-button"
+                id="navLoginLink"
+            >
+                Войти
+            </a>
+
+
+            <a
+                href="moderation.html"
+                class="login-button"
+                id="navModerationLink"
+                hidden
+            >
+                🛡 Модерация
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="security-page">
+
+        <div class="security-header">
+
+            <span class="section-label">
+                ACCOUNT SECURITY
+            </span>
+
+            <h1>
+                Безопасность аккаунта
+            </h1>
+
+        </div>
+
+
+        <!-- ПОДТВЕРЖДЕНИЕ ПОЧТЫ -->
+
+        <div
+            class="security-warning-banner"
+            id="emailWarningBanner"
+            hidden
+        >
+
+            <div>
+
+                <strong>
+                    ⚠ Email не подтверждён
+                </strong>
+
+                <p>
+                    Подтверди почту, чтобы не потерять
+                    доступ к аккаунту.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                id="resendConfirmationButton"
+                class="security-secondary-button"
+            >
+                Отправить письмо повторно
+            </button>
+
+        </div>
+
+
+        <!-- СМЕНА ПАРОЛЯ -->
+
+        <section class="security-section">
+
+            <h2>
+                Смена пароля
+            </h2>
+
+            <form id="changePasswordForm">
+
+                <div class="form-group">
+
+                    <label for="currentPassword">
+                        Текущий пароль
+                    </label>
+
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        placeholder="Введите текущий пароль"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        Новый пароль
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Минимум 8 символов"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="confirmNewPassword">
+                        Подтверждение нового пароля
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmNewPassword"
+                        placeholder="Повторите новый пароль"
+                        minlength="8"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="submit-upload-button"
+                    id="changePasswordButton"
+                >
+                    Сменить пароль
+                </button>
+
+                <div
+                    class="upload-message"
+                    id="passwordMessage"
+                    hidden
+                ></div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ИСТОРИЯ ВХОДОВ -->
+
+        <section class="security-section">
+
+            <h2>
+                История входов
+            </h2>
+
+            <p class="security-section-hint">
+                Последние 10 входов в аккаунт.
+            </p>
+
+            <div
+                class="security-list"
+                id="loginHistoryList"
+            ></div>
+
+            <div
+                class="empty-state"
+                id="loginHistoryEmptyState"
+                hidden
+            >
+
+                <p>
+                    История входов пока пуста.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- УСТРОЙСТВА -->
+
+        <section class="security-section">
+
+            <h2>
+                Устройства
+            </h2>
+
+            <p class="security-section-hint">
+                Устройства, с которых входили в аккаунт.
+            </p>
+
+            <div
+                class="security-list"
+                id="devicesList"
+            ></div>
+
+            <div
+                class="empty-state"
+                id="devicesEmptyState"
+                hidden
+            >
+
+                <p>
+                    Пока нет данных об устройствах.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ОПАСНАЯ ЗОНА -->
+
+        <section class="security-section security-danger-zone">
+
+            <h2>
+                Опасная зона
+            </h2>
+
+            <p class="security-section-hint">
+                Удаление аккаунта необратимо. Будут удалены
+                твой профиль, клипы, лайки, комментарии
+                и подписки, после чего произойдёт выход
+                из аккаунта. Полное удаление самой учётной
+                записи (email/пароль) на стороне Supabase
+                Auth требует серверного ключа или Edge
+                Function — их у клиентской части сайта нет,
+                поэтому удаляются все связанные с тобой
+                данные, а сама возможность входа под этим
+                email должна закрываться администратором.
+            </p>
+
+            <button
+                type="button"
+                id="deleteAccountButton"
+                class="security-danger-button"
+            >
+                Удалить аккаунт
+            </button>
+
+            <div
+                class="upload-message"
+                id="deleteAccountMessage"
+                hidden
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="device-info.js"></script>
+
+    <script src="security.js"></script>
+
+</body>
+
+</html>
