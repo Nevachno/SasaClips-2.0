@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Загрузить клип — SasaClips</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <a href="login.html" class="login-button" id="navLoginLink">
+                Войти
+            </a>
+
+            <a href="moderation.html" class="login-button" id="navModerationLink" hidden>
+                🛡 Модерация
+            </a>
+
+            <a href="upload.html" class="upload-button">
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="upload-page">
+
+        <div class="upload-header">
+
+            <span class="section-label">
+                UPLOAD YOUR CLIP
+            </span>
+
+            <h1>
+                Загрузить клип
+            </h1>
+
+            <p>
+                Поделись лучшим моментом со стрима
+                и, возможно, именно твой клип попадёт в эфир Sasavot.
+            </p>
+
+        </div>
+
+
+        <form id="uploadForm" class="upload-form">
+
+
+            <div
+                class="drop-zone"
+                id="dropZone"
+            >
+
+                <div class="upload-icon">
+                    ⬆
+                </div>
+
+                <h2>
+                    Перетащи видео сюда
+                </h2>
+
+                <p>
+                    или выбери файл на компьютере
+                </p>
+
+                <label
+                    for="videoFile"
+                    class="choose-file-button"
+                >
+                    Выбрать MP4
+                </label>
+
+                <input
+                    type="file"
+                    id="videoFile"
+                    accept="video/mp4,.mp4"
+                    hidden
+                >
+
+                <span class="file-limit">
+                    MP4 • до 100 MB • до 3 минут
+                </span>
+
+            </div>
+
+
+            <div
+                class="selected-file"
+                id="selectedFile"
+                hidden
+            >
+
+                <div class="file-icon">
+                    🎬
+                </div>
+
+                <div class="file-info">
+
+                    <strong id="fileName">
+                        video.mp4
+                    </strong>
+
+                    <span id="fileDetails">
+                        0 MB
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="removeFile"
+                    class="remove-file"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="video-preview-container" id="previewContainer" hidden>
+
+                <video
+                    id="videoPreview"
+                    controls
+                ></video>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="videoTitle">
+                    Название клипа *
+                </label>
+
+                <input
+                    type="text"
+                    id="videoTitle"
+                    placeholder="Например: Sasavot увидел это впервые 💀"
+                    maxlength="100"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="videoDescription">
+                    Описание
+                </label>
+
+                <textarea
+                    id="videoDescription"
+                    placeholder="Расскажи немного о клипе..."
+                    maxlength="500"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="videoSocial">
+                    Социальные сети
+                </label>
+
+                <textarea
+                    id="videoSocial"
+                    placeholder="Например: https://t.me/username или TikTok: https://tiktok.com/@username"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="videoTags">
+                    Теги
+                </label>
+
+                <input
+                    type="text"
+                    id="videoTags"
+                    placeholder="например: sasavot, мем, реакция"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="videoCategory">
+                    Категория *
+                </label>
+
+                <select
+                    id="videoCategory"
+                    class="category-select"
+                    required
+                >
+
+                    <option value="" disabled selected>
+                        Выберите категорию
+                    </option>
+
+                    <option value="creativity">
+                        🎨 Творчество
+                    </option>
+
+                    <option value="irl">
+                        🌍 IRL зрителей
+                    </option>
+
+                    <option value="memes">
+                        💀 Мемы
+                    </option>
+
+                    <option value="tiktok">
+                        🎵 TikTok
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="upload-progress-container"
+                id="progressContainer"
+                hidden
+            >
+
+                <div class="progress-info">
+
+                    <span>
+                        Загрузка...
+                    </span>
+
+                    <span id="progressPercent">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-upload-button"
+                id="submitButton"
+            >
+
+                🚀 Отправить на модерацию
+
+            </button>
+
+
+            <div
+                class="upload-message"
+                id="uploadMessage"
+                hidden
+            ></div>
+
+
+        </form>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="upload.js"></script>
+
+</body>
+
+</html>

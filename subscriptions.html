@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Мои подписки — SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="login.html"
+                class="login-button"
+                id="navLoginLink"
+            >
+                Войти
+            </a>
+
+
+            <a
+                href="moderation.html"
+                class="login-button"
+                id="navModerationLink"
+                hidden
+            >
+                🛡 Модерация
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="subscriptions-page">
+
+        <div class="subscriptions-header">
+
+            <span class="section-label">
+                MY SUBSCRIPTIONS
+            </span>
+
+            <h1>
+                Мои подписки
+            </h1>
+
+        </div>
+
+
+        <div
+            class="subscriptions-list"
+            id="subscriptionsList"
+        ></div>
+
+
+        <div
+            class="empty-state"
+            id="subscriptionsEmptyState"
+            hidden
+        >
+
+            <div class="empty-icon">
+                👤
+            </div>
+
+            <h3>
+                Пока нет подписок
+            </h3>
+
+            <p>
+                Подпишись на авторов клипов —
+                они появятся здесь.
+            </p>
+
+            <a
+                href="index.html"
+                class="upload-button"
+            >
+                Смотреть клипы
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="subscriptions.js"></script>
+
+</body>
+
+</html>
