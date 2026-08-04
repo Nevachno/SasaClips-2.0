@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Профиль — SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                id="headerLogoutButton"
+                class="login-button"
+            >
+                Выйти
+            </button>
+
+
+            <a
+                href="moderation.html"
+                class="login-button"
+                id="navModerationLink"
+                hidden
+            >
+                🛡 Модерация
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="profile-page">
+
+        <div class="profile-header">
+
+            <div
+                class="profile-avatar"
+                id="profileAvatar"
+            >
+                U
+            </div>
+
+
+            <div class="profile-info">
+
+                <h1 id="profileUsername">
+                    @user
+                </h1>
+
+                <p id="profileEmail">
+                    user@example.com
+                </p>
+
+                <p id="profileDate">
+                    На SasaClips с ...
+                </p>
+
+            </div>
+
+
+            <button
+                id="profileSubscribeButton"
+                class="subscribe-button"
+                hidden
+            >
+                Подписаться
+            </button>
+
+        </div>
+
+
+        <div class="profile-stats">
+
+            <div class="profile-stat">
+
+                <strong id="statTotalClips">
+                    0
+                </strong>
+
+                <span>
+                    Клипов
+                </span>
+
+            </div>
+
+
+            <div class="profile-stat">
+
+                <strong id="statTotalLikes">
+                    0
+                </strong>
+
+                <span>
+                    Лайков
+                </span>
+
+            </div>
+
+
+            <div class="profile-stat">
+
+                <strong id="statTotalViews">
+                    0
+                </strong>
+
+                <span>
+                    Просмотров
+                </span>
+
+            </div>
+
+
+            <div class="profile-stat">
+
+                <strong id="statFollowers">
+                    0
+                </strong>
+
+                <span>
+                    Подписчиков
+                </span>
+
+            </div>
+
+
+            <div class="profile-stat">
+
+                <strong id="statFollowing">
+                    0
+                </strong>
+
+                <span>
+                    Подписок
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-links-row">
+
+            <a
+                href="subscriptions.html"
+                id="mySubscriptionsLink"
+                class="profile-subscriptions-link"
+                hidden
+            >
+                Мои подписки →
+            </a>
+
+
+            <a
+                href="security.html"
+                id="mySecurityLink"
+                class="login-button"
+                hidden
+            >
+                🔒 Безопасность
+            </a>
+
+        </div>
+
+
+        <div
+            class="avatar-picker"
+            id="avatarPicker"
+            hidden
+        >
+
+            <span class="section-label">
+                Аватарка
+            </span>
+
+            <div
+                class="avatar-picker-options"
+                id="avatarPickerOptions"
+            ></div>
+
+        </div>
+
+
+        <div class="profile-videos">
+
+            <h2 id="myClipsHeading">
+                Мои клипы
+            </h2>
+
+
+            <div
+                class="clips-grid"
+                id="myClipsGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="myClipsEmptyState"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    🎬
+                </div>
+
+                <h3>
+                    Пока нет клипов
+                </h3>
+
+                <p>
+                    Загрузи свой первый клип,
+                    и он появится здесь.
+                </p>
+
+                <a
+                    href="upload.html"
+                    class="upload-button"
+                >
+                    🚀 Загрузить клип
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>
