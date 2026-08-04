@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Вход — SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a
+        href="index.html"
+        class="logo"
+    >
+        <span class="logo-icon">S</span>
+
+        <span>
+            Sasa<span>Clips</span>
+        </span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="index.html#clips">
+            Популярное
+        </a>
+
+        <a href="rules.html">
+            Правила
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <a
+            href="register.html"
+            class="upload-button"
+        >
+            Регистрация
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="auth-page">
+
+    <section class="auth-card">
+
+        <div class="auth-header">
+
+            <div class="auth-logo">
+                S
+            </div>
+
+            <span class="section-label">
+                WELCOME BACK
+            </span>
+
+            <h1>
+                С возвращением
+            </h1>
+
+            <p>
+                Войди в аккаунт и продолжай
+                заливать лучшие моменты.
+            </p>
+
+        </div>
+
+
+        <form id="loginForm">
+
+
+            <div class="form-group">
+
+                <label for="loginEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <div class="password-label">
+
+                    <label for="loginPassword">
+                        Пароль
+                    </label>
+
+                    <a href="forgot-password.html">
+                        Забыли пароль?
+                    </a>
+
+                </div>
+
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Введите пароль"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-submit"
+            >
+                Войти в аккаунт
+            </button>
+
+
+            <p
+                id="loginMessage"
+                class="auth-message"
+            ></p>
+
+        </form>
+
+
+        <div class="auth-footer">
+
+            Нет аккаунта?
+
+            <a href="register.html">
+                Создать аккаунт
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="supabase.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="device-info.js"></script>
+
+<script src="login.js"></script>
+
+</body>
+</html>

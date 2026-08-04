@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="login.html"
+                class="login-button"
+                id="navLoginLink"
+            >
+                Войти
+            </a>
+
+
+            <a
+                href="moderation.html"
+                class="login-button"
+                id="navModerationLink"
+                hidden
+            >
+                🛡 Модерация
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="hero fade-up">
+
+            <div class="hero-content">
+
+                <div class="section-label">
+                    🔴 ФАН-ПЛАТФОРМА SASAVOT
+                </div>
+
+
+                <h1>
+                    Заливай клипы.
+                    <br>
+                    Попадай в эфир.
+                </h1>
+
+
+                <p>
+                    Лучшие моменты сообщества Sasavot
+                    в одном месте. Загружай свои клипы,
+                    собирай лайки и попадай в историю.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="upload.html"
+                        class="upload-button"
+                    >
+                        🚀 Загрузить клип
+                    </a>
+
+
+                    <a
+                        href="#clips"
+                        class="secondary-button"
+                    >
+                        Смотреть клипы
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="stats">
+
+            <div class="stat-card fade-up">
+
+                <strong id="statClips">
+                    —
+                </strong>
+
+                <span>
+                    Клипов
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <strong id="statAuthors">
+                    —
+                </strong>
+
+                <span>
+                    Авторов
+                </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <strong id="statToday">
+                    —
+                </strong>
+
+                <span>
+                    Сегодня
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <section class="categories-section">
+
+            <div class="section-label">
+                КАТЕГОРИИ
+            </div>
+
+            <h2>
+                Выбери свой вайб
+            </h2>
+
+            <div class="category-cards" id="categoryCards">
+
+                <button class="category-card" data-category="creativity">
+                    <span class="category-card-icon">🎨</span>
+                    <span class="category-card-label">Творчество</span>
+                </button>
+
+                <button class="category-card" data-category="irl">
+                    <span class="category-card-icon">🌍</span>
+                    <span class="category-card-label">IRL зрителей</span>
+                </button>
+
+                <button class="category-card" data-category="memes">
+                    <span class="category-card-icon">💀</span>
+                    <span class="category-card-label">Мемы</span>
+                </button>
+
+                <button class="category-card" data-category="tiktok">
+                    <span class="category-card-icon">🎵</span>
+                    <span class="category-card-label">TikTok</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="top-clip" id="topClipSection" hidden>
+
+            <div class="section-label">
+                🔥 TOP CLIP
+            </div>
+
+
+            <a class="clip-card fade-left" id="topClipLink" href="video.html">
+
+                <div class="clip-preview" id="topClipPreview">
+                    ▶
+                </div>
+
+
+                <div class="clip-info">
+
+                    <h2 id="topClipTitle">
+                    </h2>
+
+
+                    <p id="topClipMeta">
+                    </p>
+
+                </div>
+
+            </a>
+
+        </section>
+
+
+        <section
+            class="clips-section"
+            id="clips"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <div class="section-label">
+                        COMMUNITY CLIPS
+                    </div>
+
+
+                    <h2>
+                        Свежие клипы
+                    </h2>
+
+                </div>
+
+
+                <div class="clip-filters">
+
+                    <button class="active" data-category="all">
+                        Все
+                    </button>
+
+                    <button data-category="creativity">
+                        🎨 Творчество
+                    </button>
+
+                    <button data-category="irl">
+                        🌍 IRL зрителей
+                    </button>
+
+                    <button data-category="memes">
+                        💀 Мемы
+                    </button>
+
+                    <button data-category="tiktok">
+                        🎵 TikTok
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="clips-toolbar">
+
+                <input
+                    type="text"
+                    id="clipsSearchInput"
+                    class="clips-search-input"
+                    placeholder="Поиск по названию или автору..."
+                >
+
+                <select
+                    id="clipsSortSelect"
+                    class="clips-sort-select"
+                >
+
+                    <option value="newest">
+                        Новые
+                    </option>
+
+                    <option value="popular">
+                        Популярные
+                    </option>
+
+                    <option value="likes">
+                        Больше лайков
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="clips-grid"
+                id="clipsGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="clipsEmptyState"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    🎬
+                </div>
+
+                <h3>
+                    Пока нет клипов
+                </h3>
+
+                <p>
+                    Стань первым, кто поделится
+                    моментом со стрима Sasavot.
+                </p>
+
+                <a
+                    href="upload.html"
+                    class="upload-button"
+                >
+                    🚀 Загрузить первый клип
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="app.js"></script>
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>

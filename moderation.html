@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Модерация — SasaClips</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <a
+            href="index.html"
+            class="logo"
+        >
+
+            <span class="logo-icon">
+                S
+            </span>
+
+            <span>
+                Sasa<span>Clips</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="index.html#clips">
+                Популярное
+            </a>
+
+            <a href="rules.html">
+                Правила
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="login.html"
+                class="login-button"
+                id="navLoginLink"
+            >
+                Войти
+            </a>
+
+
+            <a
+                href="moderation.html"
+                class="login-button"
+                id="navModerationLink"
+                hidden
+            >
+                🛡 Модерация
+            </a>
+
+
+            <a
+                href="upload.html"
+                class="upload-button"
+            >
+                Загрузить клип
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="moderation-page">
+
+        <div id="moderationDenied" class="moderation-denied" hidden>
+
+            <div class="empty-icon">
+                🚫
+            </div>
+
+            <h3>
+                Доступ запрещён
+            </h3>
+
+            <p>
+                Эта страница доступна только модераторам и администраторам.
+            </p>
+
+            <a
+                href="index.html"
+                class="upload-button"
+            >
+                На главную
+            </a>
+
+        </div>
+
+
+        <div id="moderationContent" hidden>
+
+            <div class="moderation-header">
+
+                <span class="section-label">
+                    ⏳ ОЖИДАЮТ ПРОВЕРКИ
+                </span>
+
+                <h1>
+                    Модерация клипов
+                </h1>
+
+            </div>
+
+
+            <div
+                class="clips-grid"
+                id="moderationGrid"
+            ></div>
+
+
+            <div
+                class="empty-state"
+                id="moderationEmptyState"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    ✅
+                </div>
+
+                <h3>
+                    Всё проверено
+                </h3>
+
+                <p>
+                    Клипов, ожидающих модерации, пока нет.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            Sasa<span>Clips</span>
+        </div>
+
+        <p>
+            Фан-платформа сообщества Sasavot
+        </p>
+
+        <a
+            href="https://www.twitch.tv/sasavot"
+            target="_blank"
+        >
+            Twitch Sasavot ↗
+        </a>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="supabase.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="moderation.js"></script>
+
+</body>
+
+</html>
